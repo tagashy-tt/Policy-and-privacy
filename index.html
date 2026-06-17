@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad · Flux Bot</title>
+<style>
+  :root {
+    --bg: #0a0a0d;
+    --bg-card: #131318;
+    --border: #232329;
+    --text: #e8e8ec;
+    --text-dim: #9a9aa5;
+    --accent: #6366f1;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  header { margin-bottom: 48px; }
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(99,102,241,0.12);
+    border: 1px solid rgba(99,102,241,0.3);
+    border-radius: 999px;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 32px; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .updated { color: var(--text-dim); font-size: 14px; }
+  h2 { font-size: 19px; margin: 40px 0 12px; color: var(--text); }
+  p, li { color: #c7c7d1; font-size: 15.5px; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    color: #c7c7d1;
+  }
+  th { color: var(--text-dim); font-weight: 600; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">Flux Bot</span>
+      <h1>Política de Privacidad</h1>
+      <div class="updated">Última actualización: 16 de junio de 2026</div>
+    </header>
+
+    <p>Esta Política de Privacidad explica qué información procesa Flux Bot ("el Bot") cuando lo usas en Discord, y qué hacemos (y no hacemos) con ella.</p>
+
+    <div class="card">
+      <p style="margin:0;"><strong>Resumen rápido:</strong> Flux Bot no almacena de forma permanente datos personales de los usuarios. Toda la información se procesa en memoria durante la ejecución del comando y se descarta inmediatamente después.</p>
+    </div>
+
+    <h2>1. Información que procesamos</h2>
+    <p>Para funcionar, el Bot necesita leer cierta información mínima y temporal:</p>
+    <table>
+      <tr><th>Dato</th><th>Origen</th><th>Uso</th></tr>
+      <tr><td>Enlace de TikTok / Instagram / YouTube</td><td>Mensaje del usuario</td><td>Obtener metadatos públicos del video (vistas, likes, duración, calidad, etc.)</td></tr>
+      <tr><td>ID y nombre de usuario de Discord</td><td>Discord API</td><td>Mostrar el remitente en la tarjeta de "self-promo" (mención o nombre visible)</td></tr>
+      <tr><td>Archivo de video</td><td>Plataforma de origen</td><td>Comprimirlo temporalmente para adjuntarlo en Discord, si supera el límite de subida</td></tr>
+    </table>
+
+    <h2>2. Qué NO almacenamos</h2>
+    <ul>
+      <li>No guardamos un historial de los enlaces o videos que analizas.</li>
+      <li>No guardamos tu ID de Discord, nombre de usuario ni ningún dato personal en una base de datos.</li>
+      <li>Los archivos de video descargados y/o comprimidos se escriben temporalmente en disco solo durante el procesamiento de un comando, y se eliminan automáticamente al finalizar (éxito o error).</li>
+      <li>No vendemos, compartimos ni transferimos ninguna información a terceros con fines publicitarios.</li>
+    </ul>
+
+    <h2>3. Servicios de terceros</h2>
+    <p>El Bot se conecta a las APIs/páginas públicas de TikTok, Instagram y YouTube únicamente para obtener la información del enlace que proporcionas. El uso de estas plataformas está sujeto a sus propias políticas de privacidad, sobre las cuales no tenemos control:</p>
+    <ul>
+      <li><a href="https://www.tiktok.com/legal/page/row/privacy-policy/en" target="_blank">Política de Privacidad de TikTok</a></li>
+      <li><a href="https://privacycenter.instagram.com/policy" target="_blank">Política de Privacidad de Instagram</a></li>
+      <li><a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google / YouTube</a></li>
+    </ul>
+
+    <h2>4. Discord</h2>
+    <p>El Bot opera dentro de Discord y utiliza la API oficial de Discord para leer mensajes, responder y, en self-promo, eliminar el mensaje original del usuario cuando aplica. El uso de Discord está sujeto a su propia <a href="https://discord.com/privacy" target="_blank">Política de Privacidad</a>.</p>
+
+    <h2>5. Retención de datos</h2>
+    <p>Como no almacenamos datos personales de forma persistente, no existe un período de retención que gestionar: la información se descarta al completar cada solicitud.</p>
+
+    <h2>6. Tus derechos</h2>
+    <p>Dado que no mantenemos una base de datos de usuarios, no es necesario solicitar la eliminación de datos personales almacenados. Si tienes dudas sobre cómo el Bot procesa información en un caso específico, puedes contactarnos.</p>
+
+    <h2>7. Cambios a esta Política</h2>
+    <p>Podemos actualizar esta Política de Privacidad si cambian las funciones del Bot. Recomendamos revisar esta página periódicamente.</p>
+
+    <h2>8. Contacto</h2>
+    <p>Para preguntas sobre esta Política, puedes contactarnos a través de TikTok <a href="https://www.tiktok.com/@_tagashy.tt" target="_blank">@_tagashy.tt</a>.</p>
+
+    <footer>
+      © 2026 TGS Studio. Flux Bot no está afiliado a Discord, TikTok, Instagram ni YouTube.
+    </footer>
+  </div>
+</body>
+</html>
