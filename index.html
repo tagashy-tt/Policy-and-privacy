@@ -81,48 +81,56 @@
     <header>
       <span class="badge">Flux Bot</span>
       <h1>Política de Privacidad</h1>
-      <div class="updated">Última actualización: 16 de junio de 2026</div>
+      <div class="updated">Última actualización: 29 de junio de 2026</div>
     </header>
 
     <p>Esta Política de Privacidad explica qué información procesa Flux Bot ("el Bot") cuando lo usas en Discord, y qué hacemos (y no hacemos) con ella.</p>
 
     <div class="card">
-      <p style="margin:0;"><strong>Resumen rápido:</strong> Flux Bot no almacena de forma permanente datos personales de los usuarios. Toda la información se procesa en memoria durante la ejecución del comando y se descarta inmediatamente después.</p>
+      <p style="margin:0;"><strong>Resumen rápido:</strong> Flux Bot no vende ni comparte tus datos. La mayoría de la información (enlaces, métricas de video, archivos) se procesa en memoria y se descarta al instante. Algunos datos de moderación y configuración del servidor (advertencias, ajustes de canales, watchers activos) se guardan únicamente mientras el bot esté presente en ese servidor.</p>
     </div>
 
     <h2>1. Información que procesamos</h2>
-    <p>Para funcionar, el Bot necesita leer cierta información mínima y temporal:</p>
+    <p>Para funcionar, el Bot necesita leer cierta información, dependiendo del comando o función activa:</p>
     <table>
       <tr><th>Dato</th><th>Origen</th><th>Uso</th></tr>
-      <tr><td>Enlace de TikTok / Instagram / YouTube</td><td>Mensaje del usuario</td><td>Obtener metadatos públicos del video (vistas, likes, duración, calidad, etc.)</td></tr>
-      <tr><td>ID y nombre de usuario de Discord</td><td>Discord API</td><td>Mostrar el remitente en la tarjeta de "self-promo" (mención o nombre visible)</td></tr>
-      <tr><td>Archivo de video</td><td>Plataforma de origen</td><td>Comprimirlo temporalmente para adjuntarlo en Discord, si supera el límite de subida</td></tr>
+      <tr><td>Enlace de TikTok / Instagram / X / Reddit / Twitch</td><td>Mensaje del usuario o comando</td><td>Obtener métricas públicas del video (vistas, likes, duración, calidad) y/o descargar, recortar, convertir o extraer audio del archivo</td></tr>
+      <tr><td>Contenido de los mensajes del servidor</td><td>Discord API (Message Content)</td><td>Auto-detectar enlaces para generar analytics, aplicar detección de spam y de estafas (scam/role spam)</td></tr>
+      <tr><td>ID, nombre de usuario y mención de Discord</td><td>Discord API</td><td>Mostrar el remitente en tarjetas de analytics y comandos de "self-promo"</td></tr>
+      <tr><td>Roles, fecha de ingreso y antigüedad de la cuenta de un miembro</td><td>Discord API (Server Members)</td><td>Mostrar esta información en <code>/userinfo</code> y aplicar acciones de moderación (warn, kick, ban, timeout)</td></tr>
+      <tr><td>Advertencias de moderación de un miembro</td><td>Generado por el bot al usar <code>/warn</code></td><td>Listar y gestionar advertencias dentro del servidor (<code>/warnings</code>, <code>/clearwarnings</code>)</td></tr>
+      <tr><td>Watchers activos (URL, métrica, umbral)</td><td>Comando <code>/watch</code> o <code>/watchprofile</code></td><td>Notificar cuando un video o perfil alcanza el objetivo configurado</td></tr>
+      <tr><td>Configuración del servidor (canales, logs, umbrales, on/off de funciones)</td><td>Administradores del servidor</td><td>Aplicar el comportamiento configurado del bot (auto-detect, antispam, antiscam, slowmode, logs)</td></tr>
+      <tr><td>Archivo de video</td><td>Plataforma de origen</td><td>Procesarlo temporalmente (recorte, conversión, compresión) para adjuntarlo en Discord</td></tr>
     </table>
 
     <h2>2. Qué NO almacenamos</h2>
     <ul>
-      <li>No guardamos un historial de los enlaces o videos que analizas.</li>
-      <li>No guardamos tu ID de Discord, nombre de usuario ni ningún dato personal en una base de datos.</li>
+      <li>No guardamos un historial de los enlaces o videos que analizas, más allá de los watchers que tú mismo configures como activos.</li>
+      <li>No guardamos ningún dato personal en una base de datos fuera de lo necesario para moderación (advertencias) y configuración del servidor, mientras el bot permanezca en él.</li>
       <li>Los archivos de video descargados y/o comprimidos se escriben temporalmente en disco solo durante el procesamiento de un comando, y se eliminan automáticamente al finalizar (éxito o error).</li>
       <li>No vendemos, compartimos ni transferimos ninguna información a terceros con fines publicitarios.</li>
+      <li>Las advertencias de moderación y la configuración del servidor se eliminan si el bot es expulsado de ese servidor.</li>
     </ul>
 
     <h2>3. Servicios de terceros</h2>
-    <p>El Bot se conecta a las APIs/páginas públicas de TikTok, Instagram y YouTube únicamente para obtener la información del enlace que proporcionas. El uso de estas plataformas está sujeto a sus propias políticas de privacidad, sobre las cuales no tenemos control:</p>
+    <p>El Bot se conecta a las APIs/páginas públicas de TikTok, Instagram, X (Twitter), Reddit y Twitch únicamente para obtener la información del enlace que proporcionas o para descargar el video solicitado. El uso de estas plataformas está sujeto a sus propias políticas de privacidad, sobre las cuales no tenemos control:</p>
     <ul>
       <li><a href="https://www.tiktok.com/legal/page/row/privacy-policy/en" target="_blank">Política de Privacidad de TikTok</a></li>
       <li><a href="https://privacycenter.instagram.com/policy" target="_blank">Política de Privacidad de Instagram</a></li>
-      <li><a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google / YouTube</a></li>
+      <li><a href="https://twitter.com/en/privacy" target="_blank">Política de Privacidad de X (Twitter)</a></li>
+      <li><a href="https://www.redditinc.com/policies/privacy-policy" target="_blank">Política de Privacidad de Reddit</a></li>
+      <li><a href="https://www.twitch.tv/p/legal/privacy-notice/" target="_blank">Política de Privacidad de Twitch</a></li>
     </ul>
 
     <h2>4. Discord</h2>
-    <p>El Bot opera dentro de Discord y utiliza la API oficial de Discord para leer mensajes, responder y, en self-promo, eliminar el mensaje original del usuario cuando aplica. El uso de Discord está sujeto a su propia <a href="https://discord.com/privacy" target="_blank">Política de Privacidad</a>.</p>
+    <p>El Bot opera dentro de Discord y utiliza la API oficial de Discord para leer mensajes, responder, gestionar roles, aplicar acciones de moderación (advertencias, expulsiones, baneos, timeouts) y, en self-promo, eliminar el mensaje original del usuario cuando aplica. El uso de Discord está sujeto a su propia <a href="https://discord.com/privacy" target="_blank">Política de Privacidad</a>.</p>
 
     <h2>5. Retención de datos</h2>
-    <p>Como no almacenamos datos personales de forma persistente, no existe un período de retención que gestionar: la información se descarta al completar cada solicitud.</p>
+    <p>La mayoría de la información (enlaces, métricas de video, archivos) no se almacena de forma persistente y se descarta al completar cada solicitud. Los datos de moderación (advertencias) y configuración del servidor se conservan únicamente mientras el bot esté presente en ese servidor, y se eliminan automáticamente si el bot es expulsado.</p>
 
     <h2>6. Tus derechos</h2>
-    <p>Dado que no mantenemos una base de datos de usuarios, no es necesario solicitar la eliminación de datos personales almacenados. Si tienes dudas sobre cómo el Bot procesa información en un caso específico, puedes contactarnos.</p>
+    <p>Dado que no mantenemos una base de datos de usuarios fuera del propio servidor de Discord, no es necesario solicitar la eliminación de datos personales almacenados externamente. Si quieres que se eliminen tus advertencias de moderación, un administrador del servidor puede hacerlo con <code>/clearwarnings</code>. Si tienes dudas sobre cómo el Bot procesa información en un caso específico, puedes contactarnos.</p>
 
     <h2>7. Cambios a esta Política</h2>
     <p>Podemos actualizar esta Política de Privacidad si cambian las funciones del Bot. Recomendamos revisar esta página periódicamente.</p>
@@ -136,3 +144,4 @@
   </div>
 </body>
 </html>
+
